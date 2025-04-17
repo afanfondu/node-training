@@ -3,6 +3,7 @@ import { CreateCartDto } from './dto/create-cart.dto';
 import { ProductsService } from 'src/products/products.service';
 import { UsersService } from 'src/users/users.service';
 import { Cart } from './entities/cart.entity';
+import { InsufficientStockExcpetion } from './exceptions/insufficient-stock.exception';
 
 @Injectable()
 export class CartService {
@@ -23,8 +24,7 @@ export class CartService {
     const user = this.usersService.findOne(userId);
     if (!user) throw new BadRequestException('User not found');
 
-    if (quantity > product.stock)
-      throw new BadRequestException('Not enough stock');
+    if (quantity > product.stock) throw new InsufficientStockExcpetion();
 
     product.stock -= quantity;
 
