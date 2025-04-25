@@ -1,0 +1,43 @@
+@url = http://localhost:3000
+
+GET {{url}}/tasks?search=task
+
+###
+
+POST {{url}}/tasks
+Content-Type: application/json
+
+{
+  "title": "Task 1",
+  "description": "This is task 1",
+  "userId": 2
+}
+
+###
+
+GET {{url}}/tasks/mine
+# Admin token
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NDU1OTE1ODUsImV4cCI6MTgzMTk5MTU4NX0.iFQ9lbE4N7b5dWhjpfMhE_KLcWAb7VH8caxMYDw_5Uo
+# User token
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoidXNlciIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzQ1NTkxNjQ1LCJleHAiOjE4MzE5OTE2NDV9.zQ58VxHfBBwoGTn5wbK0vcdg4SIApmNe1gDf5_-a4LU
+
+###
+
+PATCH {{url}}/tasks/1
+Content-Type: application/json
+# Admin token
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NDU1OTE1ODUsImV4cCI6MTgzMTk5MTU4NX0.iFQ9lbE4N7b5dWhjpfMhE_KLcWAb7VH8caxMYDw_5Uo
+# User token
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoidXNlciIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzQ1NTkxNjQ1LCJleHAiOjE4MzE5OTE2NDV9.zQ58VxHfBBwoGTn5wbK0vcdg4SIApmNe1gDf5_-a4LU
+
+{
+  "title": "Task 1"
+}
+
+###
+
+DELETE {{url}}/tasks/4
+# Admin token
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NDU1OTE1ODUsImV4cCI6MTgzMTk5MTU4NX0.iFQ9lbE4N7b5dWhjpfMhE_KLcWAb7VH8caxMYDw_5Uo
+# User token
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoidXNlciIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzQ1NTkxNjQ1LCJleHAiOjE4MzE5OTE2NDV9.zQ58VxHfBBwoGTn5wbK0vcdg4SIApmNe1gDf5_-a4LU

@@ -1,0 +1,21 @@
+@url = http://localhost:3000
+
+GET {{url}}/borrow
+
+###
+
+POST {{url}}/borrow
+Content-Type: application/json
+
+{
+  "bookId": 4,
+  "memberId": 1
+}
+
+###
+
+POST {{url}}/borrow/return/2
+
+###
+
+GET {{url}}/borrow/reports/overdue

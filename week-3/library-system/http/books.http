@@ -1,0 +1,19 @@
+@url = http://localhost:3000
+
+GET {{url}}/books
+
+###
+
+POST {{url}}/books
+Content-Type: application/json
+
+{
+  "title": "Book 2",
+  "ISBN": "9780743273565",
+  "quantity": 0
+}
+
+###
+
+GET {{url}}/books/available
+

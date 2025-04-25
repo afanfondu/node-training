@@ -1,0 +1,14 @@
+@url = http://localhost:3000
+
+GET {{url}}/members
+
+###
+
+POST {{url}}/members
+Content-Type: application/json
+
+{
+  "name": "John",
+  "email": "john@doe.com",
+  "phone": "1234567890"
+}
